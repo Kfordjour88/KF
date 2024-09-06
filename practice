@@ -1,0 +1,7 @@
+def main():
+    n = float(input("what's x? "))
+    print(n * n)  
+main()
+    
+
+ 
