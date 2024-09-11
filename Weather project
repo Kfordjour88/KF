@@ -1,0 +1,12 @@
+import requests
+import json
+
+city_name = input("Enter the city name to gather weather forecast ")
+api_key = "F2dade8bcc99f5a43bc3440180202241"
+api_url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=imperial"
+get_server_info = requests.get(api_url)
+json_data = get_server_info.json()
+pretty_data = json.dumps(json_data, indent=4)
+D = json_data["weather"][0]["description"]
+T = json_data["main"]["temp"]
+print(f"Weather in {city_name} is experiencing {D} and current temp is {T}")
